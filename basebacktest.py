@@ -19,9 +19,10 @@ def Selecttime(dataframe,startime, endtime):
     return Lx
 
 #importation des dataframe pour le backtest:
-input_dataframe = "./dataframe17.9mois15mBTCUSDT"
+path = './dataframes'
+input_dataframe = path + "/dataframe17.9mois15mBTCUSDT"
 dataframe6mois5m = pd.read_pickle(input_dataframe)
-dataframe6mois1m = pd.read_pickle("./dataframe17.9mois1mBTCUSDT")
+dataframe6mois1m = pd.read_pickle(path + "/dataframe17.9mois1mBTCUSDT")
 
 for k in range(len(input_dataframe)):
     if input_dataframe[k:k+4] == 'mois' :

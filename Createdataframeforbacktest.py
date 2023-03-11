@@ -99,8 +99,9 @@ def dataframe(filename, timeframe : str, Starttime : int , backtest : bool, pair
 
 def update():
     try :
+        path = "./dataframes/"
         nomfichierdata = input('Entrez le nom de fichier EXACT : ')
-        dataframe_update = pd.read_pickle(nomfichierdata)
+        dataframe_update = pd.read_pickle(path + nomfichierdata)
     except Exception:
         print('Le nom du fichier n\'est pas correct vérifiez et re-essayer')
         return
@@ -171,8 +172,9 @@ Il y a une gestion des erreurs dans le cas ou les données proposées ne corresp
 
 def delete_column():
     try :
+        path = "./dataframes/"
         nomfichierdata = input('Entrez le nom de fichier EXACT : ')
-        df = pd.read_pickle(nomfichierdata)
+        df = pd.read_pickle(path + nomfichierdata)
     except Exception:
         print('Le nom du fichier n\'est pas correct vérifiez et re-essayer')
         return
@@ -185,6 +187,7 @@ def delete_column():
 
 
 def __main__():
+    path = "./dataframe/"
     backtest = input("Voulez vous download une dataframe? (True or False) ")
     if backtest == 'True':
         timeframe = input("Choisissez une timeframe : (1m, 5m, 15m, 30m, 1h, 2h, 4h, 1d) ")
@@ -206,7 +209,7 @@ def __main__():
         lengthofdataframe = round((int(time.time()) - timestart/1000)/(3600*24*30),1)
         name = "dataframe" + str(lengthofdataframe) + 'mois' + timeframe + paire
         dataframe1 = dataframe(name, timeframe, timestart, True, paire)
-        dataframe1.to_pickle(name)
+        dataframe1.to_pickle(path  +name)
     else:
         update1 = input('Voulez vous mettre à jour une dataframe ? (True ou False) ')
         if update1 == 'True':
