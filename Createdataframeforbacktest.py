@@ -22,8 +22,8 @@ import os
 
 #Pour récupérer des informations a propose de symboles on a besoin des clefs apis binance 
 #Ces dernieres sont à insérer ci dessous 
-api_key = '0W0NnouXJG5kHRuvjm7AcZNOSYxHHPmNWItts8ZUWcIp9aQv4QyCKUa1EbRTE4Iw'
-api_secret = 'NmW0ruph3E8qvg5c9c9ngEgukPVkHKCHYBPE27ZB8UBtD7kvI79JiWQDU7SXbwrF'
+api_key = ''
+api_secret = ''
 client = Client(api_key, api_secret)
 
 
